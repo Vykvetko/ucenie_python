@@ -148,30 +148,29 @@ else:
     print(zostatok_casu,"hodín volného času nám ostalo")
 print("Koniec dna")
 
+# Chybne zadanie + oprava!
+x = int(input("Vloz cislo x: "))
+y = int(input("Vloz rozdielne cislo pre y: "))
+if x == y:
+    print(x,"je rovnake ako",y)
+print("Tieto su rovnaké!") # zly zápis -> keďže tuto vetu vypíše vždy, nezaleží na tom či je splnená podmienka ako nie
+    print("Tieto su rovnaké!") # dobry zapís => keďže tuto vetu chceme vypísať len keď je splnená podmienka, takže musíme tomu prispôbiť aj ODDELENIE
 
-############## YOU TRY IT ###############
-# # Buggy, fix it!
-# x = int(input("Enter a number for x: "))
-# y = int(input("Enter a different number for y: "))
-# if x == y:
-#     print(x,"is the same as",y)
-# print("These are equal!")
 
-#########################################
 
-# ## NESTED BRANCHING ##
-# #Example 1
-# x = float(input("Enter a number for x: "))
-# y = float(input("Enter a number for y: "))
-# if x == y:
-#     print("x and y are equal")
-#     if y != 0:
-#         print("therefore, x / y is", x/y)
-# elif x < y:
-#     print("x is smaller")
-# else:
-#     print("y is smaller")
-# print("thanks!")
+# NESTED BRANCHING (vnorené vetvenie)
+# Priklad 1:
+x = float(input("Vyber si čislo pre x:"))
+y = float(input("Vyber si čislo pre y:"))
+if x == y:
+    print("x a y su rovnaké")
+    if y != 0:
+         print(f'Preto, x/y je {x/y}')
+elif x < y:
+    print("x je menšie ako y")
+else:
+    print("y je menšie ako x")
+print("ĎAKUJEME!")
 
 
 ############## YOU TRY IT ###############
@@ -191,39 +190,27 @@ print("Koniec dna")
 
 #########################################
 
-############## YOU TRY IT ###############
-# Write a program that:
-# * Saves a secret number. 
-# * Asks the user for a number guess.
-# * Prints whether the guess is too low, too high, or the same as the secret. 
-
-# your code here
-
-#############################################
-
-#########################################
-############### END LECTURE ##########################
-#########################################
 
 
 
-#########################################
-############### AT HOME ###################
-#########################################
-# Practice 1: What is the value of s1 and s2?
+
+
+# Ake su hodnoty s1 a s2
 s1 = "a" + "b"
+s1 # zobrazí ab keďže do s1 sme uložili "a" + "b"
 
 d = "hi"
 e = " ana"
 s2 = d + 2*e
+s2 # zobrazí hi ana ana, keďže mame 2x ana s MEDZEROU na začiatku a predtým + hi
 
 
-# Practice 2: What are the substrings of s?
+# Ake su "VYBRATE" časti premennej s
 s = "ABC d3f ghi"
-s[0:3:1]
-s[0:4]
-s[8:len(s):3]
-s[2::-1]
+s[0:3:1] # zobrazí od indexu 0 teda od A po index 2 takže po C => 'ABC'
+s[0:4] # zobrazi od indeu 0 teda od A po index 3 takže to je prazdne miesto => 'ABC '
+s[8:len(s):3] # zobrazi od indexu 8 po index 10 a každý tretí znak takže => 'g'
+s[2::-1] # zobrazi od indexu 2 po začiatok, keďže step máme -1 => 'CBA'
 
 
 # Practice 3: What does this print?
