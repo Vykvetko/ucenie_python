@@ -104,14 +104,14 @@
 vaha = float(input("Zadaj svoju váhu: "))
 jednotky = input("Vyber jednotky ci váha je v KG alebo v LIBRACH (K alebo L): ")
 
-# if jednotky == "K": 
-#     print(f"Tvoja váha v librách je: {vaha * 2.205}") # keďze sme vybrali moznosť K (ako kg) => musime konvertovať kg na libry 
-# elif jednotky == "L":
-#     print(f"Tvoja váha v kilách je: {vaha / 2.205}")
-# else:
-#     print("Zadal si nesprávnu volbu")
+if jednotky == "K": 
+    print(f"Tvoja váha v librách je: {vaha * 2.205}") # keďze sme vybrali moznosť K (ako kg) => musime konvertovať kg na libry 
+elif jednotky == "L":
+    print(f"Tvoja váha v kilách je: {vaha / 2.205}")
+else:
+    print("Zadal si nesprávnu volbu")
 
-# 2.sposob
+# # 2.sposob
 if jednotky == "K": 
     vaha = vaha * 2.205
     jednotky = "LBS"
@@ -121,4 +121,17 @@ elif jednotky == "L":
 else:
     print("Zadal si nesprávnu hodnotu do VAHY alebo JEDNOTIEK!")
 print(f"Tvoja váha je {round(vaha,1)} {jednotky}")
+
+
+## Teplotny konvertor
+
+teplota = float(input("Zadaj teplotu: "))
+jednotky = input("Vyber či je teplota v Celziach alebo Fahrenhaitoch (C/F): ")
+
+if jednotky == "C":
+    teplota = round((teplota * 9) / 5 + 32,2)
+    print(f"Teplota vo F je: {teplota}°F")
+elif jednotky == "F":
+    teplota = round((teplota - 32) * (5 / 9),2)
+    print(f"Teplota v Celziach je: {teplota}°C")
 

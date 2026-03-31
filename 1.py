@@ -93,5 +93,28 @@ a_very_long_variable_name_dont_name_them_this_long_pls = 0
 # a_ve + TAB =>
 a_very_long_variable_name_dont_name_them_this_long_pls
 
+## Escape Characters (Specialne znaky)
+# používame ich na zapísanie špecialnych znakov (medzery, uvodzovky v texte...) v STRINGOCH
+# ZAPISUJEME ICH pomocou SPÄTNEHO LOMITKA ( / ) !!
 
+# NOVY RIADOK v STRINGU
+# použijeme \n pred TEXTOM (stringom), ktorý chceme ODDELIŤ na nový riadok
+print("Ahoj,\nMoje meno je Martin\nSom zo Ziliny")
 
+# ODSADENIE (odsek)
+# použijeme \t pred TEXTOM, ktorý chceme "POSUNUŤ/ODSADIŤ"
+print("Ahoj\tMatko")
+
+# VYPISANIE UVODZOVIEK V TEXTE
+# ak by sme použili len klasické "" v texte, bralo by sa to ako koniec stringu
+# použijeme \" - PRED a ZA textom, ktorý chceme vložiť do úvodzoviek
+print("Ahoj, moja prezyvka je \"Vykvet\"")
+
+# VYPISANIE APOSTROFU V TEXTE
+# rovnaký dôvod ako pri úvodzovkách
+# použijeme \' - PRED a ZA textom, ktory chceme vložiť do apostrofou
+print("Ahoj, moje priezvisko je \'Hmircik\'")
+
+# ZOBRAZENIE SPÄTNEHO LOMÍTKA V TEXTE
+# použijeme \\ 
+print("Adresár: C:\\Martin\\Desktop")

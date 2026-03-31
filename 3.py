@@ -1,20 +1,9 @@
-###################
-# Tou can uncomment each of these examples
-# and try running them yourself
+## Cyklus WHILE
 
-# To batch comment/uncomment, select the lines and then
-# on Windows hit CTRL+1 or on Mac hit CMD+1
-###################
-
-
-
-###################
-# EXAMPLE: while loops 
-####################
-# where = input("You are in the Lost Forest. Go left or right? ")
-# while where == "right":
-#     where = input("You are in the Lost Forest. Go left or right? ")
-# print("You got out of the Lost Forest! \o/")
+smer = input("Si strateny v lese, kam chces isť VLAVO alebo VPRAVO: ")
+while smer == "VPRAVO":
+    smer = input("Si strateny v lese, kam chces isť VLAVO alebo VPRAVO: ")
+print("VYŠIEL SI Z LESA!")
 
 
 

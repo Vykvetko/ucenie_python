@@ -1,4 +1,3 @@
-
 ## ZÁPIS objektového typu 'string'
 # string - používame na uloženie TEXTOVÉHO reťazca (použitie pismen, čisiel, znakov...)
 # " " / ' ' - obidve uvodzovky majú rovnaký význam pri ZÁPISE
@@ -29,6 +28,8 @@ h = "3"
 s2 = (f+g)*int(h)
 print(s2) # zobrazí nam 3x ZASEBOU 'a b' => a ba ba b
 
+
+
 ## INDEXOVANIE - môžeme VYBRAŤ jednotlivý znak na určite pozicii vo VYRAZE
 # indexy začínajú od 0 
 s = "abc"
@@ -39,6 +40,8 @@ s[3] # toto nám hodi error => keďže to chce vybrať 4. znak ale náš vyraz m
 s[-1] # -1 => vyberie nám POSLEDNY znak z výrazu (PRVÝ znak od konca) => c
 s[-2] # -2 => b
 s[-3] # -3 => a
+
+
 
 ## SLICING -  vyrezanie časti reťazca (vyber časti podľa rozsahu indexu) 
 # [start : end : step]
@@ -53,6 +56,27 @@ s[:] # vypíše nám CELY výraz => abcdefgh => vytvorí KOPIU toho výrazu (vyt
 s[::-1] # keďze je step -1 => vypíše nam celý VYRAZ odzadu 
 s[4:1:-2] # vyberie znaky od indexu po 4 po index 2 a keďže je step -2 => ec
 
+# Ake su hodnoty s1 a s2
+s1 = "a" + "b"
+s1 # zobrazí ab keďže do s1 sme uložili "a" + "b"
+
+d = "hi"
+e = " ana"
+s2 = d + 2*e
+s2 # zobrazí hi ana ana, keďže mame 2x ana s MEDZEROU na začiatku a predtým + hi
+
+# Ake su "VYBRATE" časti premennej 's'
+s = "ABC d3f ghi"
+s[0:3:1] # zobrazí od indexu 0 teda od A po index 2 takže po C => 'ABC'
+s[0:4] # zobrazi od indeu 0 teda od A po index 3 takže to je prazdne miesto => 'ABC '
+s[8:len(s):3] # zobrazi od indexu 8 po index 10 a každý tretí znak takže => 'g'
+s[2::-1] # zobrazi od indexu 2 po začiatok, keďže step máme -1 => 'CBA'
+
+# MINI: Napisanie hociakého slova opačne
+opacne_slovo = "Martin Hmirčík" 
+opacne_slovo[::-1]
+
+
 ## UPRAVA / MANIPULACIA s objektami
 # objekty typu STRING su nemenné - nemôžeme ich upraviť
 # ale môžeme vytvoriť NOVE objekty, ktoré budu ROVNAKE / INÉ verzie pôvodneho objektu
@@ -61,6 +85,8 @@ s = "car"
 s[0] = 'b'  # TOTO nám hodí error => keďže nemôžeme upravovať existujuci OBJEKT
 
 s = 'b'+s[1:len(s)]  # TOTO bude fungovať => keďže premennej s priradíme uplne novú hodnotu => VZNIKNE NÁM NOVÝ OBJEKT
+
+
 
 ## ZOBRAZOVANIE / VYPISOVANIE 
 # pri písaní kodu tu v súbore => musíme mu zadať prikaz PRINT na vypísanie
@@ -81,6 +107,8 @@ x = 1
 x_str = str(x)
 print("Moje oblubene cislo je", x, ".", "x =", x) # funguje správne => keďže to NESPAJAME, ale vypisujeme hodnotu premennej x 
 print("Moje oblubene cislo je " + x_str + ". " + "x = " + x_str) # funguje správne => keďže spájanie funguje len so STRINGOVYMI objektami
+
+
 
 ## Uživatelske vstupy (hodnoty, ktoré zadávame my)
 # input(Text: ) - zobrazi to čo sme ZADALI do zatvoriek a čaká čo UŽIVATEL zadá
@@ -106,6 +134,7 @@ odhad = int(input('Aký je náš odhad (aká bude tretia odmocnica) ')) # Je to 
 print('Tretia mocnina našho odhadu = ', odhad**3)
 dalsi_odhad = odhad - ((odhad**3 - x)/(3*odhad**2))
 print('Dalši odhad = ', dalsi_odhad)
+
 
 
 ## F-STRINGS 
@@ -135,6 +164,8 @@ test2 = False
 obidve = test1 and test2 
 print(obidve) # keďže test1 je "true" a test2 "false" a do PREMENNEJ "obidve" sme uložili tieto premenne s operatorom and => musia byť obidve TRUE, aby nám printlo TRUE
 
+
+
 ## Vetvenie (podmienky - if/else) 
 # Priklad 1
 volny_cas = 14
@@ -159,6 +190,16 @@ print("Tieto su rovnaké!") # zly zápis -> keďže tuto vetu vypíše vždy, ne
 
 
 # NESTED BRANCHING (vnorené vetvenie)
+# Rozdiel medzi if a elif:
+
+# if + if:
+# Každá podmienka sa vyhodnocuje samostatne.
+# Ak sú splnené obe, vykonajú sa obe.
+
+# if + elif:
+# elif sa vykoná iba vtedy, keď prvý if NIE JE splnený.
+# Ak je prvý if splnený, ostatné podmienky sa ignorujú.
+
 # Priklad 1:
 x = float(input("Vyber si čislo pre x:"))
 y = float(input("Vyber si čislo pre y:"))
@@ -172,140 +213,58 @@ else:
     print("y je menšie ako x")
 print("ĎAKUJEME!")
 
+# # Príklad 2:
+odpoved = ''
+x = 11
+y = 20 # vyskúšat 2,11,20
+if x == y:
+    odpoved = odpoved + 'M'
+if x <= y:   # elif x <= y:
+    odpoved = odpoved + 'i'
+else:
+    odpoved = odpoved + 'T'
+print(odpoved)
 
-############## YOU TRY IT ###############
-# What's printed when y = 2, y = 20, y = 11?
-# What if "if x <= y:" becomes "elif x <= y:"
+# ak máme x a y s rovnakými hodnotami a použijeme za prvým if -> if x <= y: - ZOBRAZÍ NAM Mi, keďze je splnena aj prvá aj druha if podmienka
+#                                                             -> elif x <= y: - ZOBRAZI NAM len M, keďže prvá if podmienka je splnená, tak tuto dalsiu elif IGNORUJE
 
-# answer = ''
-# x = 11
-# y = 2 # try 20 and 11
-# if x == y:
-#     answer = answer + 'M'
-# if x <= y:   # try making this line: elif x <= y:
-#     answer = answer + 'i'
-# else:
-#     answer = answer + 'T'
-# print(answer)
+# Priklad 3: Čo nam tento príklad
+# ZAPAMÄTAŤ že: a += b JE ROVNAKÉ AKO a = a + b
 
-#########################################
-
-
-
-
-
-
-# Ake su hodnoty s1 a s2
-s1 = "a" + "b"
-s1 # zobrazí ab keďže do s1 sme uložili "a" + "b"
-
-d = "hi"
-e = " ana"
-s2 = d + 2*e
-s2 # zobrazí hi ana ana, keďže mame 2x ana s MEDZEROU na začiatku a predtým + hi
-
-
-# Ake su "VYBRATE" časti premennej s
-s = "ABC d3f ghi"
-s[0:3:1] # zobrazí od indexu 0 teda od A po index 2 takže po C => 'ABC'
-s[0:4] # zobrazi od indeu 0 teda od A po index 3 takže to je prazdne miesto => 'ABC '
-s[8:len(s):3] # zobrazi od indexu 8 po index 10 a každý tretí znak takže => 'g'
-s[2::-1] # zobrazi od indexu 2 po začiatok, keďže step máme -1 => 'CBA'
-
-
-# Practice 3: What does this print?
-# Note that a += b is the same as a = a + b
-# answer = ''
-# x = 11
-# # try with y = 2 and y = 12
-# y = 2
-# if len(str(x)) == len(str(y)):
-#     if y != 0 and x%2 == 1:
-#         answer = answer + "x / y is " + str(x/y)
-# elif x < y:
-#     answer += "\nx is smaller"  # \n inserts a newline character in the string
-# else:
-#     answer += "\ny is smaller"
-# print(answer)
+odpoved = ''
+x = 11
+# vyskušat s Y = 2 a Y = 12
+y = 11
+if len(str(x)) == len(str(y)):
+    if y != 0 and x%2 == 1:
+        odpoved = odpoved + "x / y je " + str(x/y) # do premmenej odpoved nám vloží "x/y je ...." pretože odpoveď je 'prazdny string'
+    if x < y:
+        odpoved += "\nx je mensie"  # takže vypiše len "x je mensie" => keďže odpoved je 'prazdny string'
+elif x < y:
+        odpoved += "\nx je mensie"
+else:
+        odpoved += "\ny je mensie"
+print(odpoved)
 
 
 
-# Practice 4: Uncomment the code below and:
-# What does it print when a = 6 and b = "6"
-# What does it print when a = "1" and b = 1
-# What does it print when a = 3 and b = 3
-# What does it print when a = "1" and b = "1"
+# Priklad 4: Vyskúšať si doplniť nasledujúce hodnoty a VŠIMNUŤ SI zmeny
+# Vypíše aká konverzia by bola potrebná medzi čislami v a,b aby sa ich HODNOTY vedeli porovnať
+# a = 6 a b = "6" => INT KONVERZIA, INT A STR KONVERZIA
+# a = "1" a b = 1 => Žiadna konverzia
+# a = 3 a b = 3 => INT KONVERZIA + Žiadna konverzia
+#               => Žiadna konverzia - nám zobrazi preto lebo VŠETKY IF sa vyhodnocujú SAMOSTATNE!
+#                                   - a ELSE patrí len k IF nad nim!
+#                                   => kedze druha podmienka nebola splnená -> zobrazí Žiadna konverzia
+# a = "1" a b = "1" => Žiadna konverzia
 
-# if ( a == int(b) ):
-#     print("int conversion")
-# if ( a == int(b) ) and ( str(a) == b ):
-#     print("int and str conversion")
-# else: 
-#     print("interesting")
-    
-#########################################
-############### END AT HOME ##########################
-#########################################
+a = 3
+b = 3
+if (a == int(b)):
+    print("INT konverzia") # ak sa hodnota 'a' rovná int hodnote 'b' => vypíše INT konverzia
+if (a == int(b)) and (str(a) == b): 
+    print("INT a STR konverzia") # ak je SPLNENÁ PRVÁ PODMIENKA + hodnota str 'a' sa rovná hodnote str 'b' => vypiše INT a STR konverzia
+else: 
+    print("Žiadna konverzia")
+ 
 
-
-#########################################
-############### ANSWERS TO LECTURE ##########################
-#########################################
-# You Try It 1: Write a program that: 
-# * Asks the user for a verb.
-# * Prints "I can _ better than you" where you replace _ with the verb.
-# * Then prints the verb 5 times in a row separated by spaces.
-# For example, if the user enters run, you print:
-#     I can run better than you!
-#     run run run run run
-
-# your code here
-# verb = input("Type in a verb: ")
-# print("I can", verb, "better than you!")
-# print((verb+" ")*4+verb)
-
-
-# You Try It 2: Write a program that:
-# * Saves a secret number. 
-# * Asks the user for a number guess.
-# * Prints a bool depending on whether the guess matches the secret.
-
-# your code here
-# secret = 7
-# guess = int(input("Guess a number between 0 and 10: "))
-# print(secret == guess)
-
-
-# You Try It 3: Buggy, fix it!
-# x = int(input("Enter a number for x: "))
-# y = int(input("Enter a different number for y: "))
-# if x == y:
-#     print(x,"is the same as",y)
-# print("These are equal!")
-
-# Fixed:
-# x = int(input("Enter a number for x: "))
-# y = int(input("Enter a different number for y: "))
-# if x == y:
-#     print(x,"and",y)
-#     print("These are equal!")
-
-
-# You Try It 4: Write a program that:
-# * Saves a secret number. 
-# * Asks the user for a number guess.
-# * Prints whether the guess is too low, too high, or the same as the secret. 
-
-# your code here
-# secret = 7
-# guess = int(input("Guess a number between 0 and 10: "))
-# if guess == secret:
-#     print("You are correct.")
-# elif guess < secret:
-#     print("Your guess is too low.")
-# else:
-#     print("Your guess is too high.")
-
-#########################################
-############### END ANSWERS TO LECTURE ##########################
-#########################################
