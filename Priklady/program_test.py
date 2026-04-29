@@ -1,3 +1,7 @@
+## SHIFT + ALT + V - PRIDANIE / ODOBRATIE komentu 
+# Priradenie klavesy
+# vo VS Code -> File -> Preferences -> Keybord Shorcuts -> Toggle Line Comment
+
 # x = float(input("Vyber si čislo pre x: "))
 # y = float(input("Vyber si čislo pre y: "))
 # if x == y:
@@ -75,3 +79,69 @@
 # if str(a) == b:
 #     print("B")
 
+# n = 0
+# smer = input("Kam isť vlavo alebo vpravo: ")
+# while smer == "vpravo":
+#     n = n + 1
+#     if n > 2:
+#         print(":(")
+#     smer = input("Kam isť vlavo alebo vpravo: ")
+# print("Si vonku!")
+
+# x = 4 # premenna, do ktorej uložime HODNOTU ktorej chceme vyrátať faktorial
+# faktorial = 1
+# i = 1 # premenna pre CYKLUS = funguje ako POČÍTADLO, kolkokrát sa má WHILE cyklus vykonať
+#       # postupne ide od 1 po premennu 'x'
+# while i <= x:
+#     faktorial = faktorial * i
+#     i = i + 1
+# print(f"Faktorial čísla {x} je {faktorial}")
+
+# n = 0
+# while n < 5:
+#     print(n)
+#     n += 1
+
+# x = 4 # premenna, do ktorej uložime HODNOTU ktorej chceme vyrátať faktorial
+# faktorial = 1
+# for i in range(1, x + 1, 1):
+#     faktorial = faktorial * i
+# print(f"Faktorial čisla {x} je {faktorial}")
+
+# help(0)
+
+# import tkinter
+# import random
+
+# canvas = tkinter.Canvas(bg='red', width=300, height=300)
+# canvas.pack()
+
+# for i in range(10):
+#     x = random.randint(1, 300)
+#     y = random.randint(1, 300)
+#     farba = 'blue'
+#     canvas.create_oval(x - 5, y - 5, x + 5, y + 5, fill=farba, width=0)
+
+# tkinter.mainloop()
+
+# ab = """prvy riadok
+# matko
+# hmircik"""
+
+# print(ab)
+
+# x = int(input("Zadaj čislo: "))
+# for i in range(1, x + 1, 1):
+#     if i % 5 == 0:
+#         print(i)
+
+        
+cislo = int(input("Zadaj cele čislo: "))
+celkovo = 0
+while True:
+    r = cislo%10
+    celkovo = celkovo + r
+    cislo = cislo//10
+    if cislo == 0:
+        break
+print(celkovo)

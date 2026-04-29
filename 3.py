@@ -1,228 +1,158 @@
-## Cyklus WHILE
+## Použitie cyklusu WHILE - string (text)
 
+# Priklad 1:
 smer = input("Si strateny v lese, kam chces isť VLAVO alebo VPRAVO: ")
 while smer == "VPRAVO":
     smer = input("Si strateny v lese, kam chces isť VLAVO alebo VPRAVO: ")
-print("VYŠIEL SI Z LESA!")
+print("VYŠIEL SI Z LESA!") # keď napíšeme VLAVO => vykona sa tento príkaz, keďže je to oddelene ODSEKOM na úrovni while
+
+# Priklad 1.1:
+smer = input("Si strateny v lese\n****************\n****************\n:)\n****************\n****************\nKam chces ist vlavo alebo vpravo: ")
+while smer.lower() == "vpravo": # funkcia smer.lower() - prekonvertuje OBSAH premmenej 'smer' na MALÉ písmená
+   smer = input("Si stratený v lese\n****************\n******       ***\n  (╯°□°）╯\n     ︵ \n    ┻━┻\n****************\n****************\nKam chces ist vlavo alebo alebo vpravo: ")
+print("\nDOSTAL SI SA VON Z LESA, HURÁ!\n\o/")
+
+## Použitie cyklus WHILE - int (čisla)
+n = int(input("Vlozte kladné cele číslo: "))
+while n > 0:
+    print("x")
+    n = n-1 # ak je splnená podmienka že 'n' je väčšie ako 0, zobrazí "x" a s HODNOTY premennej 'n' odpočíta 1 => takže sa cyklus o JEDEN krat menej vykoná
+            # ak by sme tento riadok nepoužili => NEKONEČNY CYKLUS
+            # dá sa zapisať ako n -= 1
+
+# Priklad nekonečného cyklu:
+# CTRL + C - prerušenie
+while True:
+    print("Nieeee")
 
 
+# Prerobiť kód, tak aby program ukázal smutný smajlík
+# keď sa WHILE cyklus vykoná VIAC ako 2-krat => ZADAME 2-krat VPRAVO 
+# Zadanie:
+where = input("Go left or right? ")
+while where == "right":
+   where = input("Go left or right? ")
+print("You got out!")
 
-###########################################
+# Riešenie:
+n = 0 
+smer = input("Kam isť vlavo alebo vpravo: ")
+while smer == "vpravo":
+    n = n + 1 # keďže n sme definovali ako 0, každe PREBEHNUTIE cyklu zvyši hodnotu o 1 => funguje ako počitadlo vpodstate
+    if n > 2:
+        print(":(")
+    smer = input("Kam isť vlavo alebo vpravo: ")
+print("Si vonku!")
 
-# Fun Lost Forest code, run it on your own!
-#where = input("You are in the Lost Forest\n****************\n****************\n :)\n****************\n****************\nGo left or right? ")
-#while where.lower() == "right":
-#    where = input("You are in the Lost Forest\n****************\n******       ***\n  (╯°□°）╯\n     ︵ \n    ┻━┻\n****************\n****************\nGo left or right? ")
-#print("\nYou got out of the Lost Forest!\n\o/")
+# Priklad 2 (Faktorial, while loop):
 
-    
-###########
-## EXAMPLE    
-###########
-# n = int(input('Please enter a non-negative integer: '))
-# while n > 0:
-#     print('x')
-#     n = n-1  # the same as n -= 1
-    
+x = 4 # premenna, do ktorej uložime HODNOTU ktorej chceme vyrátať faktorial
+faktorial = 1
+i = 1 # premenna pre CYKLUS = funguje ako POČÍTADLO, kolkokrát sa má WHILE cyklus vykonať
+      # postupne ide od 1 po hodnotu v 'x'
+while i <= x:
+    faktorial = faktorial * i
+    i = i + 1
+print(f"Faktorial čísla {x} je {faktorial}")
 
-################ YOU TRY IT ###################
-## EXAMPLE: infinite loop, be careful!
-# To stop it, click the shell and hit CTRL+c or 
-# the red square at the top of the shell
-##############################################
-# while True:
-#     print("noooooooo")
-
-
-
-############### YOU TRY IT ################
-# Expand this code to show a sad face when the user entered 
-# the while loop more than 2 times. Hint: use a counter
-###################
-# where = input("Go left or right? ")
-# while where == "right":
-#     where = input("Go left or right? ")
-# print("You got out!")
-
-
-
-#############
-## EXAMPLE: counter
-#############
-
-## With while loop
-# n = 0
-# while n < 5:
-#     print(n)
-#     n = n+1
-
-## With for loop
-#for n in range(5):
-#    print(n)
-
-###########
-## EXAMPLE: factorial
-###########
-
-## With while loops
-# x = 6
-# i = 1
-# factorial = 1
-# while i <= x:
-#     factorial *= i
-#     i += 1
-# print(f'{x} factorial is {factorial}')
-
-## With for loops
-# factorial = 1
-# for i in range(1, x+1, 1):
-#     factorial *= i
-# print(f'{x} factorial is {factorial}')
-
-
-################ YOU TRY IT ################
-# for i in range(1,4,1):
-#     print(i)
-# for j in range(1,4,2):
-#     print(j*2)
-# for me in range(4,0,-1):
-#     print("$"*me)
-
-
-###########################################
-
-###############
-## EXAMPLE: sum
-###############
-
-#mysum = 0
-#for i in range(10):
-#    mysum += i
-#print(mysum)
-
-######
-
-#mysum = 0
-#for i in range(7, 10):
-#    mysum += i
-#print(mysum)
-
-######
-
-#mysum = 0
-#for i in range(5, 11, 2):
-#    mysum += i
-#    if mysum == 5:
-#        break
-#        mysum += 1
-#print(mysum)
-
-################ YOU TRY IT ################
-# Fix this code to use variables start and end in the 
-# range, to get the total sum between and including those values. 
-
-# mysum = 0
-# start = 3
-# end = 5
-# for i in range(start, end):
-#     mysum += i
-# print(mysum)
-
-###########################################
-
-
-
-#########################################################
-##################### AT HOME ###########################
-#########################################################
-
-# Practice 1: 
-# Declare a variable x that stores an int > 0. Print all ints, one on each
-# line, between 1 (inclusive) and x (inclusive) that are divisible by 5.
-# For ex. if x = 15, it prints 5, 10, and 15. 
-# For ex. if x = 14, it prints 5 and 10.
-
-
-# Practice 2:
-# Declare a variable n that stores an int. Print the sum of all digits 
-# in n. Hint: you can get a digit at a time looking at the remainder 
-# when you divide n by 10.
-# For ex. If x = 1234, print 10
+## Použitie cyklusu FOR
+# Odporučené použitie keď VIEM KOLKOKRÁT sa má cyklus vykonať!
  
+for n in range(5):
+    print(n)
+
+# Porovnanie s while:
+
+n = 0
+while n < 5:
+    print(n)
+    n += 1
+
+## Priklad 2.1 (Faktorial, for loop):
+
+x = int(input("Zadajte číslo, ktorého faktorial chcete vyrátať:")) # x = premenna, do ktorej uložime HODNOTU ktorej chceme vyrátať faktorial
+faktorial = 1
+for i in range(1, x + 1, 1):
+    faktorial = faktorial * i
+print(f"Faktorial čisla {x} je {faktorial}")
+
+
+for i in range(1,4,1): # v každom cykle premenná i dostane ďalšiu hodnotu z ROZSAHU range(1, 4, 1)
+    print(i) # tu vpodstate doplnenú hodnotu vypíše keďze => print(i)
+
+
+for j in range(1,4,2): # po každom CYKLE nám doplní KAZĎU DRUHÚ hodnotu do premmenej! => keďže STEP je 2
+    print(j*2) 
+
+for me in range(4,0,-1): 
+     print("$"*me)  # vypíše nam OPAČNÚ PYRAMIDU z $, ktorá bude ZAČINAŤ $$$$ a KONČIŤ $
+
+# Príklad 3:
+
+mysum = 0 # premenna, kde budeme ukladať PRIEBEŽNÚ SUMU sučtu hodnôt v SEKVENCÍI HODNOT (range(10))
+for i in range(10):
+   mysum += i # po každom CYKLE, pripočítam k 'mysum' hodnotu ktorá nasleduje z range(10) (0,1,2,3.... po 9)
+print(mysum) # vypiše sučet všetkých čisel v ROZSAHU HODNOT (range(10))
+
+# Príklad 3.1:
+
+mysum = 0
+for i in range(7, 10):
+    mysum += i # k premmenej mysum (teda k 0) po každom cykle PRIČÍTAME hodnotu z rozsahu 7 po 9 => keďže range(10)
+print(mysum) # mysum (0) + 7 => mysum (7) + 8 => mysum (15) + 9 = 24
+
+# Príklad 3.2:
+# Oprav kód, aby sme premennami (start, end) si určili 
+# ROZSAH ČISEL, ktorých hodnotu chceme sčítať VRÁTANE HODNOT (start a end)
+mysum = 0
+start = 3
+end = 5
+for i in range(start, end + 1): # musíme ku end pridať '+ 1', aby sme mohli aj tuto hodnotu SČÍTAŤ 
+    mysum += i
+print(mysum)
+
+
+## CVIČENIA 
+
+# Test 1: 
+# Zadefinuj premennu x, ktorá bude obsahovať kladne cele čislo -> int > 0.
+# Vypišme všetky ČISLA ktoré su delitelne 5kou a nachádzaju sa v rozmedzi
+# 1 po x - OBIDVE VRATANE! 
+# 
+# Napr. ak x = 15, tak zobrazí 5, 10, 15
+# Napr. ak x = 14, tak zobrazí 5, 10
+
+x = int(input("Zadaj čislo: "))
+for i in range(1, x + 1, 1):
+    if i % 5 == 0:
+        print(i)
 
 
 
-#########################################################
-##################### END AT HOME ###########################
-#########################################################
+
+# Test 2:
+# Zadefinuj premennu 'cislo', do ktorej uložíme KLADNE CELE číslo
+# Vypíš sučet všetkých jej jednotlivých číslic 
+# Napr. cislo = 1234, (1+2+3+4) => program vypíše 10
+# Pomôcka: Jednotlivé čislice vieme dostať tým, že sa pozrieme na zvyšok 
+# po delení premennej 'cislo' DESIATIMI!
 
 
-#########################################################
-##################### ANSWERS AT HOME ###########################
-#########################################################
-
-# Practice 1: 
-# Declare a variable x that stores an int > 0. Print all ints, one on each
-# line, between 1 (inclusive) and x (inclusive) that are divisible by 5.
-# For ex. if x = 15, it prints 5, 10, and 15. If x = 14, it prints 5 and 10.
-
-# x = 15
-# for i in range(1,x+1):
-#     if i%5 == 0:
-#         print(i)
-
-
-# Practice 2:
-# Declare a variable n that stores an int. Print the sum of all digits 
-# in n. Hint: you can get a digit at a time looking at the remainder 
-# when you divide n by 10.
-# For ex. If x = 1234, print 10
-# n = 1234
-# total = 0
-# while True:
-#     r = n%10
-#     total += r 
-#     n = n//10
-#     if n == 0:
-#         break
-# print(total)
-
-#########################################################
-##################### END ANSWERS AT HOME ###########################
-#########################################################
+cislo = int(input("Zadaj cele čislo: "))
+celkovo = 0
+while True:
+    r = cislo%10 # to nám vždy "ODSEKNE" posledné ČISLO z hodnoty v premmenej 'cislo'   
+                 # z 1234 % 10 => ZVYŠOK po delení je 4 (posledna čislica)
+    celkovo = celkovo + r # tu sa pripočítame ten zvyšok po DELENI (4)
+                          # čo je POSLEDNÁ čislica z požadovaného čisla
+    cislo = cislo//10 # // - CELOČISELNE DELENIE! - použijeme aby sme mohli znovať "ODSEKNUŤ" posledné čislo
+    if cislo == 0:
+        break
+print(celkovo)
 
 
 
 
-#########################################
-############### ANSWERS TO LECTURE ##########################
-#########################################
-# You Try It 1: 
-# Expand this code to show a sad face when the user entered 
-# the while loop more than 2 times. Hint: use a counter
-###################
-# where = input("Go left or right? ")
-# counter = 0
-# while where == "right":
-#     counter = counter + 1
-#     if counter > 2:
-#         print(":(")
-#     where = input("Go left or right? ")
-# print("You got out!")
 
 
 
-# Your Try It 2: 
-# Fix this code to use variables start and end in the 
-# range, to get the total sum between and including those values. 
-
-# mysum = 0
-# start = 1
-# end = 3
-# for i in range(start, end+1):
-#     mysum += i
-# print(mysum)
-
-#########################################
-############### END ANSWERS TO LECTURE ##########################
-#########################################

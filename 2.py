@@ -7,6 +7,7 @@ c = a + b # spojenie stringov
 d = a + " " + b # spojenie stringov s medzerou medzi nimi
 opakovanie_vyrazu = b * 3 # zopakuje požadovaný string 3-krat
 
+## STRINGOVE metódy (strings method)
 # funkcia len() - vráti počet znakov v požadovanom reťazci
 len('auto') # slovo auto má 4 znaky => VYSLEDOK funkcie bude 4
 
@@ -16,7 +17,13 @@ len(s) # premenna s má 3 znaky => VYSLEDOK funkcie bude 3
 dlzka_retazca = len(s) # uloženie POČTU znakov reťazca do premmenej
 dlzka_retazca
 
-# Priklady
+# funkcia find():
+# vráti PRVÚ INDEXOVÚ pozíciu POŽADOVANÉHO znaku, ktorý chceme nájsť v stringu (texte)
+najdi_v_slove = "Martin Hmirčík"
+najdi_v_slove.find("r") # bude hladať v MOJOM celom mene INDEXOVU pozícu PRVEHO "r" => prve "r" sa nachádza na indexe 2
+
+
+# Príklady:
 b = ":"
 c = ")"
 s1 = b + 2*c
@@ -75,6 +82,7 @@ s[2::-1] # zobrazi od indexu 2 po začiatok, keďže step máme -1 => 'CBA'
 # MINI: Napisanie hociakého slova opačne
 opacne_slovo = "Martin Hmirčík" 
 opacne_slovo[::-1]
+
 
 
 ## UPRAVA / MANIPULACIA s objektami
@@ -147,13 +155,15 @@ print(cislo*zlomok, 'je', zlomok*100, '% z', cislo) # prvé riesenie - za zlomok
 print(cislo*zlomok, 'je', str(zlomok*100) + '% z', cislo) # druhe riešenie - vyrieši 1. problem
 print(f'{cislo*zlomok} je {zlomok*100}% z {cislo}') # najlepsie riešenie - najnovšie, najviac prehladné
 
-# Priklady (pomocou f-strings)
+# Priklady (pomocou f-strings):
 # Vypočíta kolko je 1/3 (33.3%) z požadovaného ČISLA
 tretina = 1/3
 moje_cislo = int(input("Vlozime cislo, ktorého 1/3 chceme zobraziť: "))
 print(f"{tretina*moje_cislo:.2f} je {tretina*100:.2f}% z {moje_cislo}")
 
-## BOOLEAN (typ)
+
+
+## BOOLEAN (typ - TRUE/FALSE)
 
 volny_cas = 15
 spaci_cas = 8
@@ -166,7 +176,7 @@ print(obidve) # keďže test1 je "true" a test2 "false" a do PREMENNEJ "obidve" 
 
 
 
-## Vetvenie (podmienky - if/else) 
+## Vetvenie (PODMIENKY - IF/ELSE) 
 # Priklad 1
 volny_cas = 14
 spaci_cas = 8
@@ -213,7 +223,7 @@ else:
     print("y je menšie ako x")
 print("ĎAKUJEME!")
 
-# # Príklad 2:
+# Príklad 2:
 odpoved = ''
 x = 11
 y = 20 # vyskúšat 2,11,20
@@ -228,7 +238,7 @@ print(odpoved)
 # ak máme x a y s rovnakými hodnotami a použijeme za prvým if -> if x <= y: - ZOBRAZÍ NAM Mi, keďze je splnena aj prvá aj druha if podmienka
 #                                                             -> elif x <= y: - ZOBRAZI NAM len M, keďže prvá if podmienka je splnená, tak tuto dalsiu elif IGNORUJE
 
-# Priklad 3: Čo nam tento príklad
+# Priklad 3: 
 # ZAPAMÄTAŤ že: a += b JE ROVNAKÉ AKO a = a + b
 
 odpoved = ''
@@ -245,8 +255,6 @@ elif x < y:
 else:
         odpoved += "\ny je mensie"
 print(odpoved)
-
-
 
 # Priklad 4: Vyskúšať si doplniť nasledujúce hodnoty a VŠIMNUŤ SI zmeny
 # Vypíše aká konverzia by bola potrebná medzi čislami v a,b aby sa ich HODNOTY vedeli porovnať
@@ -266,5 +274,22 @@ if (a == int(b)) and (str(a) == b):
     print("INT a STR konverzia") # ak je SPLNENÁ PRVÁ PODMIENKA + hodnota str 'a' sa rovná hodnote str 'b' => vypiše INT a STR konverzia
 else: 
     print("Žiadna konverzia")
- 
+
+
+
+## Podmienený výraz (Conditional expression - ternary operator)
+# použitie pri JEDNODUCHOM rozhodnutí - JEDNA podmienka
+
+# Syntax: (HODNOTA_AK_PLATI_IF if PODMIENKA else HODNOTA_AK_NEPLATI)
+# Príklad 1:
+x = 3
+vysledok = ("Kladné" if x > 0 else "Záporné alebo nula") # ak x > 0 = do vysledok sa uloží hodnota "Kladné", ak bude číslo menšie ako 0 => uloží "Zaporne alebo nula"
+print(vysledok)
+
+# Príklad 2 (Zistenie či je čislo párne/nepárne):
+y = 4
+parnost = ("Cislo je parne" if y % 2 == 0 else "Cislo je neparne")
+print(parnost)
+
+
 

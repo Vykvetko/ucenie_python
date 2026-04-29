@@ -5,30 +5,43 @@ type(3.0)
 type('auto')
 type('-')
 
-## Konvertujeme hodnotu v zatvorke do POŽADOVANÉHO objektového typu 
+
+
+## Konvertujeme HODNOTU v ZÁTVORKE do POŽADOVANÉHO objektového typu 
 float(3)
 int(3.9)
 round(3.9)
 
-## Zapis vyrazov 
+## Zápis vyrazov: 
 3+2
  
 type((4+2)*6-1)
 float((4+2)*6-1)
 
-## Zapisovanie premmených 
+## Zapisovanie premmených:
 pi = 355/113
 
+# Paralelne priradenie premennych
+x, y, meno, pi = 120, 255, 'bod A', 3.14 # vytvorí premenne x, y, meno, pi
 
-# vypočita približnu hodnotu pi
+
+p1, p2, p3 = 11, 22, 33
+p1, p2, p3 = p1, p3, p2 # hodnotu VPRAVO p1 uloží do premennej VLAVO p1
+                        # hodnotu VPRAVO p3 uloží do premennej VLAVO p2
+                        # hodnota VPRAVO p2 uloží do premmenej VLAVO p3
+p1, p2, p3 # 11, 33. 22 => pretože sme prehodili hodnoty v p2 a p3
+
+# Zápis premennych s výrazom:
 pi = 355/113
 radius = 2.2
 area = pi*(radius**2)
 circumference = pi*(radius*2)
 
+
+
 ## ZAPISOVANIE KODOV (code style) ##
 
-# Prvý zapis - ZLY ZAPIS, takto to nezapisovať
+# Prvý zapis - ZLY ZAPIS, takto to nezapisovať:
 # spravi vypočty
 a = 355/113 *(2.2**2)
 c = 355/113 *(2.2*2)
@@ -41,22 +54,20 @@ a = p*(r**2)
 # vynasobi p s r 2-krat
 c = p*(r*2)
 
-# Tretí zápis - SPRÁVNY ZÁPIS
+# Tretí zápis - SPRÁVNY ZÁPIS:
 # Vypočita obsah a obvod kruznice za pouzitia
 pi = 355/113
 radius = 2.2
 area = pi*(radius**2)
 circumference = pi*(radius*2)
 
-
-# ZMENA priradenia hodnoty pre premennu radius
+# ZMENA priradenia hodnoty pre premennu radius:
 pi = 3.14
 radius = 2.2
 area = pi*(radius**2)
 radius = radius+1
 
-
-## Vymena hodnot 
+# Príklad 1 (PREMENNE - výmena hodnôt): 
 # Danému x a y, vymente hodnoty bez toho aby sme ich priamo PRIRADILI do premennej
 x = 1			
 y = 2
@@ -70,12 +81,13 @@ y = x
 x = temp
 
 
+
 ## KOMENTOVANIE KODU
 # používame jednu # a všetko za tým na DANOM riadku Python ignoruje
 # ## - dve mriežky, nemaju specialnu funkciu => používame pre lepšiu čitatelnosť kódu (NADPISY, OZNAČENIE NIAKYCH SEKCII...)
 
-# Viac riadkový komentár
-# p= 355/113i 
+# Viac riadkový komentár:
+# p = 355/113
 # radius = 2.2
 # area = pi*(radius**2)
 # circumference = pi*(radius*2)
@@ -85,6 +97,7 @@ rychlost = 90  # km/h
 cas = 60  # sekund
 
 
+
 ## Autodoplnovanie názvu DLHÝCH premenných (vo VS Code, iných editoroch...)
 # Zadanie premenej
 a_very_long_variable_name_dont_name_them_this_long_pls = 0
@@ -92,6 +105,8 @@ a_very_long_variable_name_dont_name_them_this_long_pls = 0
 # Ked ju chceme znova napísať, stači napisať a_ve a TAB.
 # a_ve + TAB =>
 a_very_long_variable_name_dont_name_them_this_long_pls
+
+
 
 ## Escape Characters (Specialne znaky)
 # používame ich na zapísanie špecialnych znakov (medzery, uvodzovky v texte...) v STRINGOCH
@@ -118,3 +133,18 @@ print("Ahoj, moje priezvisko je \'Hmircik\'")
 # ZOBRAZENIE SPÄTNEHO LOMÍTKA V TEXTE
 # použijeme \\ 
 print("Adresár: C:\\Martin\\Desktop")
+
+# VIACRIADKOVÝ ZÁPIS
+# použijeme 3 UVODZOVKY na ZAČIATKU text aj na KONCI textu, ktorý chceme uložiť
+moje_meno = """Volám sa
+Martin
+Hmirčík"""
+
+moje_meno # oddelenie na nový riadok => nahradené ŠPECIALNYM ZNAKOM \n 
+print(moje_meno) 
+
+
+
+## SHIFT + ALT + V - PRIDANIE / ODOBRATIE komentu 
+# Priradenie klavesy
+# vo VS Code -> File -> Preferences -> Keybord Shorcuts -> Toggle Line Comment
